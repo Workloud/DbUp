@@ -106,6 +106,10 @@ namespace DbUp.Support.SqlServer
                 });
             }
 
+			DoStoreExecutedScript(script);//WORKLOUD
+		}
+		protected virtual void DoStoreExecutedScript(SqlScript script)//WORKLOUD
+		{
             connectionManager().ExecuteCommandsWithManagedConnection(dbCommandFactory =>
             {
                 using (var command = dbCommandFactory())

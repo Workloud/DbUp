@@ -35,6 +35,10 @@ namespace DbUp.Builder
 
             config.Validate();
             
+			return CreateEngine(config);//WORKLOUD
+		}
+		protected virtual UpgradeEngine CreateEngine(UpgradeConfiguration config)
+		{
             return new UpgradeEngine(config);
         }
     }

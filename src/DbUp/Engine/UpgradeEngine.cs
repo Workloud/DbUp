@@ -99,7 +99,7 @@ namespace DbUp.Engine
             }
         }
 
-        private List<SqlScript> GetScriptsToExecuteInsideOperation()
+		protected virtual List<SqlScript> GetScriptsToExecuteInsideOperation()//WORKLOUD
         {
             var allScripts = configuration.ScriptProviders.SelectMany(scriptProvider => scriptProvider.GetScripts(configuration.ConnectionManager));
             var executedScripts = configuration.Journal.GetExecutedScripts();
